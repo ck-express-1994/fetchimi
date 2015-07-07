@@ -1,0 +1,10 @@
+content fetchimi chrome/path/
+content fetchimi chrome/path/ contentaccessible=yes
+
+content fetchimi chrome/content/
+locale 	fetchimi en-US chrome/locale/en-US/
+locale  fetchimi ja-JP chrome/locale/ja-JP/
+skin	fetchimi classic/1.0 chrome/skin/classic/
+
+# Firefox
+overlay	chrome://browser/content/browser.xul chrome://fetchimi/content/overlay.xul

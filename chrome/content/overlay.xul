@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://fetchimi/skin/fetchimi.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://fetchimi/locale/fetchimi.dtd">
+
+<overlay id="fetchimi_overlay"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="fetchimi_stringbundle" src="chrome://fetchimi/locale/string.properties" />
+	</stringbundleset>
+	
+	<commandset id="mainCommandSet">
+		<command id="fetchimi_toogle_cmd" oncommand="_fi.toogle();" />
+	</commandset>
+	
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton id="fetchimi_tbb" 
+			class="fetchimi_off" 
+			type="pictures"
+			tooltiptext="&tooltip.disabled;" 
+			label="&inline.label;" 
+			style="list-style-image:url('chrome://fetchimi/skin/on16x16.png')" 
+			command="fetchimi_toogle_cmd">
+		</toolbarbutton>
+	</toolbarpalette>
+	
+	<popup id="contentAreaContextMenu">
+		<menuseparator id="fetchimi_separator_cm" />
+		<menuitem id="fetchimi_cm"
+			class="menuitem-iconic fetchimi_off" 
+			label="&inline.label;"		
+			command="fetchimi_toogle_cmd"
+		/>
+	</popup>
+		
+	<menupopup id="menu_ToolsPopup">
+		<menuseparator id="fetchimi_separator_tm" hidden="true" insertbefore="devToolsSeparator" />
+		<menuitem id="fetchimi_tm" 
+			class="menuitem-iconic fetchimi_off"
+			label="&inline.label;"
+			command="fetchimi_toogle_cmd"
+			insertbefore="devToolsSeparator"
+		/>
+	</menupopup>
+	
+	<statusbar id="status-bar">
+		<statusbarpanel id="fetchimi_sbp"
+			class="statusbarpanel-iconic fetchimi_off" 
+			tooltiptext="&tooltip.disabled;"
+			command="fetchimi_toogle_cmd"
+		/>
+		
+	</statusbar>
+	
+	<script type="application/x-javascript" src="fetchimi.js" />
+
+</overlay>
